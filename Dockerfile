@@ -8,6 +8,8 @@ RUN apk add --update \
         mailcap && \
     rm -rf /var/cache/apk/*
 
+RUN mkdir -p /var/log/icecast && chown -R icecast:icecast /usr/share/icecast && chown -R icecast:icecast /var/log/icecast
+
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
