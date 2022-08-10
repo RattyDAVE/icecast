@@ -1,7 +1,10 @@
 # icecast
 Icecast 2 for Docker
 ```
-docker run -d -p 8000:8000 rattydave/icecast
+docker run -d \
+  -p 8000:8000 \
+  -v ~/logs:/var/log/icecast
+  rattydave/icecast
 ```
 Supported ENV variables:
 
