@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$ICECAST_CUSTOMXML" ne "1" ]; then
+if [ "$ICECAST_CUSTOMXML" != "1" ]; then
 
 
     if [ -n "$ICECAST_SOURCE_PASSWORD" ]; then
