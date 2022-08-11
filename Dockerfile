@@ -1,25 +1,23 @@
 FROM alpine:edge
 
 USER root
-
 WORKDIR /root
+
+EXPOSE 8000
 
 RUN addgroup -S icecast && \
     adduser -S icecast
     
 RUN apk add --update \
-        icecast \
-        mailcap && \
+        icecast && \
     rm -rf /var/cache/apk/*
 
-RUN mkdir -p /var/log/icecast && chown -R icecast:icecast /usr/share/icecast && chown -R icecast:icecast /var/log/icecast
-#RUN chmod 775 /etc
-#RUN chown -R icecast:icecast /etc/icecast.xml
+RUN mkdir -p /var/log/icecast
+RUN chown -R icecast:icecast /usr/share/icecast
+RUN chown -R icecast:icecast /var/log/icecast
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-#USER icecast:root
 
 EXPOSE 8000
 
