@@ -13,6 +13,8 @@ RUN mkdir -p /var/log/icecast && chown -R icecast:icecast /usr/share/icecast && 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+USER icecast:icecast
+
 EXPOSE 8000
 
 #VOLUME ["/var/log/icecast"]
