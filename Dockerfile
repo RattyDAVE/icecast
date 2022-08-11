@@ -15,7 +15,7 @@ RUN chown -R icecast:icecast /etc/icecast.xml
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-USER icecast:icecast
+USER icecast:root
 
 EXPOSE 8000
 
