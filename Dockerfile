@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 
 RUN addgroup -S icecast && \
     adduser -S icecast
