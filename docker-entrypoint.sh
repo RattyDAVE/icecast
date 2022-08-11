@@ -28,9 +28,9 @@ if [ -n "$ICECAST_MAX_SOURCES" ]; then
     sed -i "s/<sources>[^<]*<\/sources>/<sources>$ICECAST_MAX_SOURCES<\/sources>/g" /etc/icecast.xml
 fi
 
-if [ -n "$ICECAST_ENABLE_DIRECTORY" ]; then
- sed -i '/<directory>/{x;d;};1h;1!{x;p;};${x;p;}' /etc/icecast.xml
- sed -i "/<\/directory>/{N;s/\n.*//;}" /etc/icecast.xml
-fi
+#if [ -n "$ICECAST_ENABLE_DIRECTORY" ]; then
+# sed -i '/<directory>/{x;d;};1h;1!{x;p;};${x;p;}' /etc/icecast.xml
+# sed -i "/<\/directory>/{N;s/\n.*//;}" /etc/icecast.xml
+#fi
 
 exec "$@"
