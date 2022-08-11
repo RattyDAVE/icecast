@@ -1,5 +1,9 @@
 FROM alpine:edge
 
+USER root
+
+WORKDIR /root
+
 RUN addgroup -S icecast && \
     adduser -S icecast
     
